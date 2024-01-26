@@ -126,9 +126,9 @@ tourSchema.virtual('reviews',{
 //console.log(this.slug);
 tourSchema.pre('save',function(next){
     try{
-        console.log('pre save middleware is being called');
+        // console.log('pre save middleware is being called');
     this.slug=slugify(this.name,{lower:true});
-    console.log(this.slug)
+    // console.log(this.slug)
     //console.log(slug);
     }catch(err){
         console.log(err)
@@ -157,11 +157,11 @@ tourSchema.pre(/^find/, function(next){
     next();
 })
 
-tourSchema.post(/^find/,function(docs,next){
-    console.log(`Query took ${Date.now()-this.start} milliseconds!`)
-    //console.log(docs);
-    next();
-})
+// tourSchema.post(/^find/,function(docs,next){
+//     console.log(`Query took ${Date.now()-this.start} milliseconds!`)
+//     //console.log(docs);
+//     next();
+// })
 
 
 const Tour= mongoose.model('Tour', tourSchema);

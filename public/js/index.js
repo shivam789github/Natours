@@ -22,7 +22,7 @@ if (mapBox) {
 if (loginForm)
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("hi");
+    // console.log("hi");
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     login(email, password);
@@ -37,12 +37,12 @@ if (userDataForm)
     form.append('name',document.getElementById("name").value);
     form.append('email',document.getElementById("email").value);
     form.append('photo',document.getElementById("photo").files[0]);
-    console.log(form);
-    console.log(form.get('name'));
-    console.log(form.get('email'));
-    console.log(form.get('photo'));
+    // console.log(form);
+    // console.log(form.get('name'));
+    // console.log(form.get('email'));
+    // console.log(form.get('photo'));
     
-    console.log("hello updating user data");
+    // console.log("hello updating user data");
     updateSettings(form, "data");
   });
 
@@ -50,11 +50,11 @@ if (userPasswordForm)
   userPasswordForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     document.querySelector('.btn--save-password').textContent='Updating...'
-    console.log("updating user password using fetch api");
+    // console.log("updating user password using fetch api");
     const passwordCurrent = document.getElementById("password-current").value;
     const password = document.getElementById("password").value;
     const passwordConfirm = document.getElementById("password-confirm").value;
-    console.log(password);
+    // console.log(password);
     await updateSettings({ passwordCurrent, password, passwordConfirm },"password");
 
     document.querySelector('.btn--save-password').textContent='Save password'
@@ -67,6 +67,6 @@ if (userPasswordForm)
     bookBtn.addEventListener('click',e=>{
     e.target.textContent='processing...'
     const {tourId}=e.target.dataset;
-    console.log(tourId);
+    // console.log(tourId);
     bookTour(tourId);
 })

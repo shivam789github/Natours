@@ -1,11 +1,11 @@
 import {showAlert} from './alerts';
-console.log('hello from parcel');
+// console.log('hello from parcel');
 
 export const login = async (email, password) => {
-  console.log('hiiiiiiiiiiiiiiiiii from login');
+  // console.log('hiiiiiiiiiiiiiiiiii from login');
   
   try {
-    const response = await fetch("http://localhost:3000/api/v1/users/login", {
+    const response = await fetch("/api/v1/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,10 +34,10 @@ export const login = async (email, password) => {
 };
 
 export const logout = async () => {
-  console.log('hiiiiiiiiiiiiiiiiii from logout');
+  // console.log('hiiiiiiiiiiiiiiiiii from logout');
   
   try {
-    const response = await fetch("http://localhost:3000/api/v1/users/logout", {
+    const response = await fetch("/api/v1/users/logout", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

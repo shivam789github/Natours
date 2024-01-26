@@ -6,8 +6,8 @@ export const updateSettings = async (dat, type) => {
   try {
     const url =
       type === "password"
-        ? "http://localhost:3000/api/v1/users/updateMyPassword"
-        : "http://localhost:3000/api/v1/users/updateMe";
+        ? "/api/v1/users/updateMyPassword"
+        : "/api/v1/users/updateMe";
     
     const response = await fetch(url, {
       method: "PATCH",
@@ -25,9 +25,9 @@ export const updateSettings = async (dat, type) => {
       throw new Error(`HTTP error! status: ${response.status}, message: ${errorMessage}`);
     }
     
-    console.log('fetching json');
+    // console.log('fetching json');
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     if (data.status === "success") {
       showAlert("success", `${type} updated successfully`);
     } else {
